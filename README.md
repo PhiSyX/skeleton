@@ -8,7 +8,7 @@ Architecture, organisation, structure minimale d'un projet (racine)
 | apps/{app}/`app.{ext}`         | app.ts, app.rs, app.php, ...                                                    |
 | apps/{app}/`{pollution-files}` | ex: .gitignore, .eslint, rome.json, clippy.toml, phpstan.neon, ...              |
 |                                |                                                                                 |
-| assets/                        | Ressources statiques des applications                                           |
+| assets/                        | Ressources statiques partagées des applications                                 |
 | assets/{dir}/{file}            | ex: audio/file.mp3, img/file.png, svg/icon.svg, ...                             |
 |                                |                                                                                 |
 | audits/                        | Audits, pentests, review, rapports de sécurité                                  |
@@ -22,15 +22,15 @@ Architecture, organisation, structure minimale d'un projet (racine)
 | database/                      | Base de données des applications                                                |
 |                                | ex: extensions, enums, migrations, seeders, fixtures, ...                       |
 |                                |                                                                                 |
-| docs/                          | Documentation du projet                                                         |
+| docs/                          | Documentation du projet, ADR, Qualité de code, Capture d'écrans                 |
 | docs/apps/{app}/README.md      | Documentation d'une application                                                 |
-| docs/code-quality              | Qualité du code                                                                 |
-| docs/screenshots               | Captures d'écrans des apps                                                      |
 |                                |                                                                                 |
 | env/                           | Variables d'environnement des applications                                      |
 | env/{app}/{env-file}           | ex: editor/.env, editor/.env.local, mail/.env.vault                             |
 |                                |                                                                                 |
 | examples/                      | Des fichiers d'exemples                                                         |
+|                                |                                                                                 |
+| i18n                           | Internationalisation, locales                                                   |
 |                                |                                                                                 |
 | infra/                         | déploiement, ci, docker, kubernetes, ansible, ...                               |
 | infra/{tool}/{conf-file}       |                                                                                 |
