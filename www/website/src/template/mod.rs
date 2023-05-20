@@ -2,7 +2,7 @@ pub mod layout {
     mod another;
     mod default;
 
-    pub use self::{another::LayoutDefault, default::{LayoutAnother};
+    pub use self::{another::LayoutAnother, default::LayoutDefault};
 
     use web::markup::{html, MarkupHTML, RenderHTML, DOCTYPE};
 

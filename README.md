@@ -1,7 +1,11 @@
-Architecture, organisation, structure minimale d'un projet (racine)
+Architecture, organisation, structure minimale d'un projet (racine) multi
+applications / sites.
 
 Les fichiers inclus dans les différents répertoires ne sont là qu'à titre
 d'exemples. Les applications et les sites ne sont donc pas fonctionnel(le)s.
+
+Il n'y a pas de fichiers permettant de lier les workspaces, à la racine de ce
+dépôt, cela est volontaire.
 
 | Dossier                                        | Proposition                                                                                   | Informations complémentaires                                                 |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |

@@ -7,7 +7,7 @@ use super::Layout;
 // --------- //
 
 #[derive(Default)]
-pub struct LayoutDefault {
+pub struct LayoutAnother {
     extend_layout: Layout,
     // code...
 }
@@ -16,7 +16,7 @@ pub struct LayoutDefault {
 // Implémentation // -> Interface
 // -------------- //
 
-impl web::markup::RenderHTML for LayoutDefault {
+impl web::markup::RenderHTML for LayoutAnother {
     fn render(&self) -> web::markup::MarkupHTML {
         let layout = self.extend_layout.add_meta(html!(
             meta name="description" content="Another skeleton";
