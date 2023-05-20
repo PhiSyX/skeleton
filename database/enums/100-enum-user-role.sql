@@ -1,0 +1,7 @@
+CREATE TYPE user_role AS ENUM (
+	'USER',
+	'MODERATOR',
+	'ADMIN',
+	'SYSADMIN',
+	'NETADMIN'
+);
