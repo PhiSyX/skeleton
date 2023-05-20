@@ -1,0 +1,37 @@
+[package]
+name = "website"
+edition = { workspace = true }
+version = { workspace = true }
+
+[[bin]]
+path = "bin/local.rs"
+name = "website-server"
+
+[[bin]]
+path = "bin/docker.rs"
+name = "website-server-docker"
+required-features = ["docker"]
+
+[lib]
+name = "site"
+path = "site.rs"
+
+[dependencies]
+# Modules internes
+project = { workspace = true }        # Exemple: packages/crates/project
+cli = { workspace = true }            # Exemple: packages/crates/cli
+config = { workspace = true } # Exemple: packages/crates/config
+database = { workspace = true }       # Exemple: packages/crates/database
+env = { workspace = true }            # Exemple: packages/crates/env
+logger = { workspace = true }         # Exemple: packages/crates/logger
+security = { workspace = true }       # Exemple: packages/crates/securtiy
+web = { workspace = true }            # Exemple: packages/crates/web
+
+# Dépendances externes
+serde = { version = "1.0.152" }
+
+# Patches
+chrono = { workspace = true } # Exemple: packages/patches/chrono
+
+# Thirdparty
+serde_blabla = { workspace = true } # Exemple: packages/thirdparty/serde_blabla

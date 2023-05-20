@@ -1,0 +1,13 @@
+{
+  "name": "@project/my-best-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "app.ts",
+  "dependencies": {
+    "@project/config": "workspace:*",
+    "@project/cli": "workspace:*",
+    "@project/env": "workspace:*",
+    "@project/std": "workspace:*"
+  }
+}

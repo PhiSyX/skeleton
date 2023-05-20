@@ -1,55 +1,78 @@
 Architecture, organisation, structure minimale d'un projet (racine)
 
-| Dossier                        | Proposition / Exemples                                                                   |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| apps/                          | Applications liées à notre projet                                                        |
-| apps/{app}/bin/                | Différents points d'entrées d'une app                                                    |
-| apps/{app}/src/                | Fichier source, code métier                                                              |
-| apps/{app}/`app.{ext}`         | app.ts, app.rs, app.php, ...                                                             |
-| apps/{app}/`{pollution-files}` | ex: .gitignore, .eslint, rome.json, clippy.toml, phpstan.neon, ...                       |
-|                                |                                                                                          |
-| assets/                        | Ressources statiques partagées des applications                                          |
-| assets/{dir}/{file}            | ex: audio/file.mp3, img/file.png, svg/icon.svg, ...                                      |
-|                                |                                                                                          |
-| audits/                        | Audits, pentests, review, rapports de sécurité                                           |
-| audits/{timestamp}/{file}      |                                                                                          |
-|                                |                                                                                          |
-| config/                        | Configurations des applications                                                          |
-| config/shared                  | Contient les fichiers de configurations applicatifs partagées (ex: certificats ssl, ...) |
-| config/{app}/{app}.{ext}       | Configuration principale d'une application                                               |
-| config/{app}/{name}.{ext}      | Configurations secondaires d'une application                                             |
-|                                |                                                                                          |
-| database/                      | Base de données des applications                                                         |
-|                                | ex: extensions, enums, migrations, seeders, fixtures, ...                                |
-|                                |                                                                                          |
-| docs/                          | Documentation du projet, ADR, Qualité de code, Capture d'écrans                          |
-| docs/apps/{app}/README.md      | Documentation d'une application                                                          |
-|                                |                                                                                          |
-| env/                           | Variables d'environnement des applications                                               |
-| env/{app}/{env-file}           | ex: editor/.env, editor/.env.local, mail/.env.vault                                      |
-|                                |                                                                                          |
-| examples/                      | Des fichiers d'exemples                                                                  |
-|                                |                                                                                          |
-| i18n                           | Internationalisation, locales                                                            |
-|                                |                                                                                          |
-| infra/                         | Containérisation, orchestrateur, CI/CD, configurations toolings, monitoring, ...         |
-| infra/{tool}/{conf-file}       | ex: docker, k8s, ansible, puppet                                                         |
-|                                |                                                                                          |
-| packages/                      | Code partagé par nos applications                                                        |
-| packages/patches/{module}      | Correctifs de certaines dépendances externes                                             |
-| packages/third-party/{module}  | Dépendances externes (non versionnées)?                                                  |
-| packages/{manager}/{module}    | Les modules internes en fonction de l'écosystème (npm, composer, crates, gems, ...)      |
-|                                |                                                                                          |
-| supports                       | Communications, discussions                                                              |
-|                                |                                                                                          |
-| tests/                         | Les tests fonctionnels des applications                                                  |
-| tests/{app}/...                |                                                                                          |
-|                                |                                                                                          |
-| tmp/                           | Les fichiers temporaires générés par les applications                                    |
-| tmp/{dir}/...                  | ex: des logs, des sessions (php), ...                                                    |
-|                                |                                                                                          |
-| tools/                         | Outils internes pour améliorer la dx                                                     |
-| tools/{dir}                    | ex: ./tools/check-license, ./tools/generate-docs, ./tools/vscode, ...                    |
-|                                |                                                                                          |
-| www/                           | Sites webs                                                                               |
-| www/{site}                     |                                                                                          |
+Les fichiers inclus dans les différents répertoires ne sont là qu'à titre
+d'exemples. Les applications et les sites ne sont donc pas fonctionnel(le)s.
+
+| Dossier                                        | Proposition                                                                                   | Informations complémentaires                                                 |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| apps/                                          | Toutes les applications liées à notre projet                                                  |                                                                              |
+| apps/{app/                                     | Application                                                                                   | EX: [1](apps/my-best-app/)                                                   |
+| apps/{app}/bin/                                | Différents points d'entrées d'une app                                                         |                                                                              |
+| apps/{app}/src/                                | Fichier source, code métier                                                                   |                                                                              |
+| apps/{app}/sys/                                | Design système de l'application                                                               | EX: `storybook`, `histoire`, ... -- À réfléchir (avec `/design`).            |
+| apps/{app}/app.{ext}                           | Point d'entrée de l'application (lib)                                                         | EX: `app.ts, app.rs, app.php`, ...                                           |
+| apps/{app}/`{pollution-file}`                  |                                                                                               | EX: `.gitignore`, `.eslint`, `rome.json`, `clippy.toml`, `phpstan.neon`, ... |
+|                                                |                                                                                               |                                                                              |
+| assets/                                        | Ressources statiques partagées des applications                                               |                                                                              |
+| assets/{dir}/{file}                            |                                                                                               | EX: `audio/file.mp3`, `img/file.png`, `svg/icon.svg`, ...                    |
+|                                                |                                                                                               |                                                                              |
+| audits/                                        | Audits, pentests, review, rapports de sécurité                                                |                                                                              |
+| audits/{timestamp}/{file}                      |                                                                                               | EX timestamp: YYYYMMDD                                                       |
+|                                                |                                                                                               |                                                                              |
+| config/                                        | Configurations des applications                                                               |                                                                              |
+| config/shared                                  | Contient les fichiers de configurations applicatifs partagées                                 | EX: certificats ssl, ...                                                     |
+| config/{app}/{app}.{ext}                       | Configuration principale d'une application                                                    |                                                                              |
+| config/{app}/{name}.{ext}                      | Configurations secondaires d'une application                                                  |                                                                              |
+|                                                |                                                                                               |                                                                              |
+| database/                                      | Base de données des applications                                                              |                                                                              |
+| database/{dir}                                 |                                                                                               | EX: `extensions`, `enums`, `migrations`, `seeders`, `fixtures`, ...          |
+|                                                |                                                                                               |                                                                              |
+| design/                                        | Design des applications                                                                       | À réfléchir                                                                  |
+| design/system                                  | Design système des applications (storybook, histoire, ...)                                    | EX: `storybook`, `histoire`, ... -- À réfléchir (avec `/apps/{app}/sys`).    |
+|                                                |                                                                                               |                                                                              |
+| docs/                                          | Documentation du projet                                                                       |                                                                              |
+| docs/adr                                       | Architecture Decision Record                                                                  |                                                                              |
+| docs/apps/{app}/README.md                      | Documentation d'une application                                                               |                                                                              |
+| docs/code-quality                              | Qualité du code                                                                               |                                                                              |
+| docs/developers                                | DX                                                                                            |                                                                              |
+| docs/{protocols OR specs}                      | Protocoles et/ou spécifications utilisé(e)s                                                   |                                                                              |
+| docs/screenshots                               | Captures d'écrans                                                                             |                                                                              |
+|                                                |                                                                                               |                                                                              |
+| env/                                           | Variables d'environnement des applications                                                    |                                                                              |
+| env/{app}/{env-file}                           |                                                                                               | EX: `editor/.env`, `editor/.env.local`, `mail/.env.vault`, ...               |
+|                                                |                                                                                               |                                                                              |
+| i18n                                           | Internationalisation, locales                                                                 | EX: `fr.po`, `fr.yaml`, ...                                                  |
+|                                                |                                                                                               |                                                                              |
+| infra/                                         | Containérisation, orchestrateur, CI/CD, Déploiement, configurations toolings, monitoring, ... |                                                                              |
+| infra/{tool}/{conf-file}                       |                                                                                               | EX: `Docker`, `k8s`, `Ansible`, ...                                          |
+|                                                |                                                                                               |                                                                              |
+| licenses/                                      | Fichiers de licences                                                                          |                                                                              |
+|                                                |                                                                                               |                                                                              |
+| packages/                                      | Code partagé par nos applications                                                             |                                                                              |
+| packages/patches/{module}                      | Correctifs de certaines dépendances externes                                                  |                                                                              |
+| packages/thirdparty/{module}                   | Dépendances externes                                                                          | Non versionnée OU non disponible dans les registres des PM                   |
+| packages/{manager}/{module}                    | Les modules internes en fonction de l'écosystème                                              | EX pm: `npm`, `composer`, `crates`, `gems`, ...                              |
+| packages/{manager}/{module}/examples           | Les exemples du module                                                                        |                                                                              |
+| packages/{manager}/{module}/src                | Fichier source                                                                                |                                                                              |
+| packages/{manager}/{module}/`{pollution-file}` |                                                                                               | EX: `.gitignore`, `.eslint`, `package.json`, `Cargo.toml`, ...               |
+| packages/{manager}/{module}/{index}.{ext}      | Un fichier qui sert d'index pour éviter de faire des imports sur `src/`                       | EX: `index.ts`, `lib.rs`, ...                                                |
+|                                                |                                                                                               |                                                                              |
+| supports/                                      | Communications, discussions internes                                                          |                                                                              |
+|                                                |                                                                                               |                                                                              |
+| tests/                                         | Les tests fonctionnels des applications                                                       |                                                                              |
+| tests/{app}/...                                |                                                                                               |                                                                              |
+|                                                |                                                                                               |                                                                              |
+| tmp/                                           | Les fichiers temporaires générés par les applications                                         |                                                                              |
+| tmp/{dir}/...                                  |                                                                                               | EX: des logs, des sessions (php), ...                                        |
+|                                                |                                                                                               |                                                                              |
+| tools/                                         | Outils internes pour améliorer la dx                                                          |                                                                              |
+| tools/{script}                                 |                                                                                               | EX: `./check-license`, `./generate-docs`, ...                                |
+| tools/{tool}                                   | IDE, IA, ...                                                                                  | EX: `vscode/settings.json`, ...                                              |
+|                                                |                                                                                               |                                                                              |
+| www/                                           | Sites webs                                                                                    |                                                                              |
+| www/{site}                                     | Site web                                                                                      | EX: [1](www/website/)                                                        |
+| www/{site}/bin                                 | Différents points d'entrées d'un site                                                         |                                                                              |
+| www/{site}/public                              | Ressources publiques du site                                                                  |                                                                              |
+| www/{site}/src                                 | Fichier source, code métier                                                                   |                                                                              |
+| www/{site}/site.{ext}                          | Point d'entrée du site (lib)                                                                  |                                                                              |
+| www/{site}/`{pollution-file}`                  |                                                                                               | EX: `.gitignore`, `.eslint`, `package.json`, `Cargo.toml`, ...               |
