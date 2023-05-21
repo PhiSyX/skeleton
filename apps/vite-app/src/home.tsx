@@ -11,6 +11,8 @@ import { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
 
+  let env = import.meta.env.VITE_APP_HELLO_WORLD;
+
   return (
     <>
       <div>
@@ -21,7 +23,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + {env}</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

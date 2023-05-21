@@ -26,4 +26,5 @@ export default defineConfig({
       },
     ],
   },
+  envDir: path.resolve("..", "..", "env", "vite-app"),
 });
