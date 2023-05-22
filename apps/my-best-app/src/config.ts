@@ -3,7 +3,7 @@
 //       Dans le cadre d'un projet node :
 //          `@project/{module}` -> `packages/npm/{module}`
 //
-// NOTE: '~' -> accès au fichier de l'application courante.
+// NOTE: '~' -> accès aux fichiers de l'application courante.
 //
 //       `~/app` -> `apps/{app}/app.ts`
 //       `~/*`   -> `apps/{app}/src/*`
